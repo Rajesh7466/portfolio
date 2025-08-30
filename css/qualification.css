@@ -1,4 +1,4 @@
-:root{
+:root {
     --primary-color: #0a192f;
     --secondary-color: #62ebcf;
     --secondary-color-dark: #15D1AB;
@@ -6,46 +6,116 @@
     --accent-color-dark: #8892b0;
 }
 
-.qualification-container{
-    width: 100vw;
-    height: 80vh;
+.qualification-container {
+    width: 100%;
+    min-height: 80vh;
+    background-color: var(--primary-color);
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 250px;
+    justify-content: center;
+    padding: 40px 20px;
 }
 
-.qualification-container span{
-    width: 1000px;
+.qualification-container span {
+    max-width: 900px;
+    width: 100%;
 }
 
-.qualification-container h3{
+/* Title */
+.qualification-container h3 {
     color: var(--accent-color);
     letter-spacing: 1px;
-    font-size: 30px;
-    margin-bottom: 50px;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
-.qualification-container h4{
-    color: var(--accent-color-dark);
+.qualification-container h3 em {
+    color: var(--secondary-color-dark);
+}
+
+/* Degree / Course name */
+.qualification-container h4 {
+    color: var(--accent-color);
     letter-spacing: 1px;
-    font-size: 25px;
-    margin-bottom: 10px;
-}
-.qualification-container em{
-    color: var(--secondary-color-dark);
-    font-size: 25px;
+    font-size: 22px;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
-.qualification-container aside em{
-    color: var(--secondary-color-dark);
-    font-size: 20px;
+/* University or CGPA text */
+.qualification-container em {
+    color: var(--accent-color-dark);
+    font-size: 16px;
 }
 
-.clg-box{
+/* Single entry box */
+.clg-box {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    background-color: rgba(10, 25, 47, 0.6);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--secondary-color-dark);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.clg-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
 
+/* Left and right alignment */
+.clg-box aside {
+    flex: 1;
+}
+
+.clg-box aside:last-child {
+    text-align: right;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 992px) {
+    .qualification-container {
+        padding: 30px 20px;
+    }
+
+    .qualification-container h3 {
+        font-size: 26px;
+    }
+
+    .clg-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .clg-box aside:last-child {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .qualification-container {
+        padding: 20px 15px;
+    }
+
+    .qualification-container h3 {
+        font-size: 22px;
+    }
+
+    .qualification-container h4 {
+        font-size: 18px;
+    }
+
+    .qualification-container em {
+        font-size: 14px;
+    }
+
+    .clg-box {
+        padding: 15px;
+    }
+}

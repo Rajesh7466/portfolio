@@ -1,103 +1,121 @@
-:root{
-    --primary-color: #0a192f;
-    --primary-color-light: #0a192f8d;
-    --secondary-color: #62ebcf;
-    --secondary-color-dark: #15D1AB;
-    --accent-color: #ccd6f6;
-    --accent-color-dark: #8892b0;
+:root {
+  --primary-color: #0a192f;
+  --primary-color-light: #0a192f8d;
+  --secondary-color: #62ebcf;
+  --secondary-color-dark: #15d1ab;
+  --accent-color: #ccd6f6;
+  --accent-color-dark: #8892b0;
 }
 
-.experience-container{
-    width: 100vw;
-    height: auto;
-    padding-top: 100px;
-    padding-left: 250px;
-    padding-right: 250px;
+.experience-container {
+  width: 100%;
+  padding: 80px 50px;
 }
 
-.experience-container span{
-    background-color: red;
-    width: 1000px;
+.experience-container h3 {
+  color: var(--accent-color);
+  font-size: 30px;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
-.experience-container article img{
-    width: 500px;
-    height: 300px;
-    outline: 3px solid var(--secondary-color-dark);
-    outline-offset: 20px;
-    margin-top: 20px;
+.experience-container article {
+  margin-bottom: 80px;
 }
 
-.experience-container h3{
-    color: var(--accent-color);
-    letter-spacing: 1px;
-    font-size: 30px;
-    margin-bottom: 50px;
+.experience-container article img {
+  max-width: 100%;
+  height: auto;
+  outline: 3px solid var(--secondary-color-dark);
+  outline-offset: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-.experience-container em{
-    color: var(--secondary-color-dark);
-    font-size: 25px;
+.experience-container article img:hover {
+  transform: scale(1.05);
 }
 
-.experience-container article{
-    position: relative;
-    height: auto;
-    margin-bottom: 100px;
+.experience-container aside em {
+  color: var(--secondary-color-dark);
+  font-size: 18px;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.experience-container article p{
-    width: 400px;
+.experience-container aside h5 {
+  color: var(--accent-color);
+  font-size: 24px;
+  margin: 10px 0;
 }
 
-.experience-container aside{
-    position: absolute;
-    top: 30px;
-    right: 0;
-    text-align: right;
+.experience-container aside p {
+  color: var(--accent-color-dark);
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 500px;
 }
 
-.experience-container aside em{
-    font-size: 15px;
-}
-.experience-container aside h5{
-    color: var(--accent-color);
-    font-size: 30px;
-}
-
-.experience-container section{
-    background-color: var(--primary-color-light);
-    padding: 10px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--primary-color);
-    border-radius: 10px;
-    transform: translateX(15px);
-}
-
-.experience-container aside p{
-    font-size: 20px;
-    width: 450px;
-    color: var(--accent-color-dark);
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.experience-container figure{
-    margin-top: 20px;
+.experience-container figure {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .experience-container figure i {
-    background-color: var(--accent-color);
-    padding: 5px 20px;
-    border-radius: 20px;
-    margin-left: 10px;
-    font-size: 12px;
-    color: var(--primary-color);
-    border: 1px solid var(--secondary-color-dark);
+  background: var(--secondary-color-dark);
+  color: var(--primary-color);
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
 }
 
-.experience-container section i {
-    color: var(--secondary-color-dark);
-    font-size: 25px;
+.experience-container section a {
+  color: var(--secondary-color);
+  font-size: 28px;
+  transition: color 0.3s ease;
+}
+
+.experience-container section a:hover {
+  color: var(--accent-color);
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 992px) {
+  .experience-container {
+    padding: 40px 15px;
+  }
+
+  .experience-container article {
+    margin-bottom: 50px;
+  }
+
+  .experience-container article img {
+    outline-offset: 10px;
+    border-radius: 8px;
+  }
+
+  .experience-container aside {
+    text-align: center !important;
+    padding: 15px;
+  }
+
+  .experience-container aside p {
+    max-width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .experience-container figure {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 992px) {
+  aside {
+    padding-left: 50px !important;
+  }
 }

@@ -37,13 +37,16 @@ html{
 
 body{
     position: relative;
-    width: 100vw;
+     width: 100% !important;
+    /* width: 100vw; */
     height: auto;
      /* font-family: 'Roboto', sans-serif; */
      font-family: "Playwrite AU QLD", cursive !important;
     background-color: var(--primary-color) !important;
     font-size: 20px;
     overflow-x: hidden;
+    display: flex !important;
+  justify-content: center !important;
 }
 
 a{
@@ -66,4 +69,154 @@ a{
  /* .mt-90{
     margin-top: 70px;
  } */
+ 
+ .page-wrapper {
+  max-width: 1200px !important;  /* Control maximum width */
+  margin: 0 auto !important;     /* Center horizontally */
+  padding: 0 20px !important;    /* Add some space on sides */
+}
+
+/* body {
+  display: flex !important;
+  justify-content: center !important;
+  background-color: var(--primary-color) !important;
+  width: 100% !important;
+} */
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 0 10px;
+  }
+}
+
+
+
+/* Contact Section */
+.contact-section {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+}
+
+.contact-section .highlight {
+  color: var(--secondary-color);
+}
+
+.contact-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact-box:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-box .icon {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.contact-form .form-control {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #fff;
+}
+
+.contact-form .form-control::placeholder {
+  color: var(--accent-color-dark);
+}
+
+.contact-form .form-control:focus {
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+  box-shadow: none;
+  border: 1px solid var(--secondary-color);
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, var(--secondary-color), var(--secondary-color-dark));
+  border: none;
+  color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn-gradient:hover {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-box {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+}
+.mt-40{
+margin-top: 80px !important;
+}
+
+
+/* CTA Section */
+.cta-section {
+  background-color: var(--primary-color);
+}
+
+.cta-box {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--accent-color);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* Gradient text heading */
+.text-gradient {
+  background: linear-gradient(90deg, var(--secondary-color), var(--secondary-color-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+.cta-box .btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: var(--accent-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.cta-box .btn:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cta-box {
+    padding: 2rem;
+  }
+
+  .cta-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-box p {
+    font-size: 0.95rem;
+  }
+
+  .cta-box .btn {
+    width: 100%;
+  }
+}
 
