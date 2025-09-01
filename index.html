@@ -14,6 +14,10 @@
     <!-- Bootstrap Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
+<!-- Font Awesome (use CSS CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pap6cXjQ0q6w5F2t3wS1l0p1yq6kFvQ1KxI1R7x2q1s3u2e6N6p3t4D9y1v5j1Q9s7Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -33,50 +37,42 @@
     </div> -->
     <div class="scroll-tracker"></div>
     <div class="container">
-      <header>
-        <a href="index-2.html"
-          ><img src="assets/img/logo.png" alt="logo" title="Home"
-        /></a>
-        <nav>
-          <ul>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#qualification">Qualification</a>
-            </li>
-            <li>
-              <a href="#experience">Experience</a>
-            </li>
-            <li>
-              <a href="#project">Project</a>
-            </li>
-            <li>
-              <a href="#skills">Skills</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-            <li>
-              <a href="assets/pdf/rajesh_panda.pdf" target="_blank"
-                ><button title="View Resume">Resume</button></a
-              >
-            </li>
-          </ul>
-        </nav>
-        <i
-          class="fa-solid fa-bars"
-          id="open-mobile-nav"
-          onclick="open_mobile_nav()"
-        ></i>
-        <i
-          class="fa-solid fa-xmark"
-          id="close-mobile-nav"
-          onclick="close_mobile_nav()"
-        ></i>
-      </header>
+      <!-- header start -->
+       <header>
+  <nav class="navbar navbar-expand-lg fixed-top" style="backdrop-filter: blur(8px); background-color: var(--primary-color-light); border-bottom: 1px solid #000;">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="index-2.html">
+        <img src="assets/img/logo.png" alt="logo" title="Home" width="50" height="50">
+      </a>
 
-      <div class="mobile-nav" id="mobile-nav">
+      <!-- Toggler -->
+      <button class="navbar-toggler text-light border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav links -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link text-light" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#qualification">Qualification</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#project">Project</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <a class="btn btn-outline-info ms-lg-3" href="assets/pdf/rajesh_panda.pdf" target="_blank" title="View Resume">Resume</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+       <!-- header ebnd -->
+
+
+      <!-- <div class="mobile-nav" id="mobile-nav">
         <nav>
           <ul>
             <li onclick="close_mobile_nav()">
@@ -104,7 +100,7 @@
             </li>
           </ul>
         </nav>
-      </div>
+      </div> -->
      <!-- Hero Section Start -->
 <div class="hero-container">
   <!-- Left Text -->
@@ -112,10 +108,10 @@
     <p id="line1" class="typing">Hi, my name is</p>
     <h1 id="line2" class="typing">Rajesh Kumar.</h1>
     <h2 id="line3" class="typing">I build things for the <em>web</em>.</h2>
-    <p id="line4" class="typing">
+    <!-- <p id="line4" class="typing">
       I’m a software engineer specializing in building <br> (and occasionally
       designing) exceptional digital experiences.
-    </p>
+    </p> -->
     <a href="#projects" class="btn">View Projects</a>
 
     <!-- Mobile Social Icons -->
@@ -143,7 +139,7 @@
 
 <!-- Desktop Email -->
 <div class="fixed-email">
-  <p>thisisrohitkumar@outlook.com</p>
+  <p>thisisrajeshkumar@outlook.com</p>
   <span></span>
 </div>
 
@@ -512,7 +508,7 @@
 
       <!-- Footer -->
       <p class="small  mb-0">
-        © 2025 Rohit Rohra. Built with React, TypeScript, and lots of ❤️
+        © 2025 .Rajesh kumar Built with React, TypeScript, and lots of ❤️
       </p>
     </div>
   </div>
@@ -539,7 +535,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     <!-- my script -->
-<!-- <script>
+<script>
   const lines = [
     { id: "line1", text: "Hi, my name is" },
     { id: "line2", text: "Rajesh Kumar." },
@@ -547,41 +543,61 @@
     { id: "line4", text: "I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences." }
   ];
 
-  function typeWriter(element, text, delay, callback) {
-    element.classList.add("typing"); // add blinking cursor
-    element.textContent = "";
-    let i = 0;
+  let lineIndex = 0; // To keep track of which line is currently being typed
 
+  function typeWriter(element, text, delay, callback) {
+    element.textContent = ""; // Clear existing text
+    element.classList.add("typing-cursor"); // Add blinking cursor to the current line
+    element.style.display = "inline-block"; // Ensure it takes up space for the cursor
+
+    let i = 0;
     function typing() {
       if (i < text.length) {
         element.textContent += text.charAt(i);
         i++;
         setTimeout(typing, delay);
       } else {
-        element.classList.remove("typing"); // remove cursor for current line
+        // After typing is complete for this line
+        element.classList.remove("typing-cursor"); // Remove cursor from this line
+        element.style.display = ""; // Reset display after typing
         if (callback) callback();
       }
     }
     typing();
   }
 
-  // Sequential typing for all lines
-  function startTyping(index = 0) {
-    if (index < lines.length) {
-      const el = document.getElementById(lines[index].id);
-      typeWriter(el, lines[index].text, 70, () => {
-        startTyping(index + 1);
+  function startTypingSequence() {
+    if (lineIndex < lines.length) {
+      const currentLineData = lines[lineIndex];
+      const el = document.getElementById(currentLineData.id);
+
+      typeWriter(el, currentLineData.text, 70, () => {
+        // This callback runs after the current line has finished typing
+        lineIndex++; // Move to the next line
+        startTypingSequence(); // Start typing the next line
       });
     } else {
-      // Keep cursor blinking at the end of last line
+      // All lines have been typed. Add the cursor to the end of the last line.
       const lastEl = document.getElementById(lines[lines.length - 1].id);
-      lastEl.classList.add("typing");
+      lastEl.classList.add("typing-cursor");
+      lastEl.style.display = "inline-block"; // Ensure cursor is visible
     }
   }
 
-  window.onload = () => startTyping();
-</script> -->
+  window.onload = () => {
+    // Clear initial text to ensure animation starts clean
+    lines.forEach(line => {
+      const el = document.getElementById(line.id);
+      if (el) el.textContent = "";
+    });
+    startTypingSequence();
+  };
+</script>
      <!-- my script end -->
+      <!-- header script start -->
+  
+
+       <!-- header script end -->
   </body>
 
  

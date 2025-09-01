@@ -230,25 +230,25 @@
 
 
 /* Hero Text Animation */
-/* Typing effect for hero text */
-/* .hero-text p,
+/* Hero Text Animation */
+.hero-text p,
 .hero-text h1,
 .hero-text h2 {
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
+  white-space: nowrap; /* Keep text on a single line */
+  overflow: hidden; /* Hide overflowing text */
+  /* Remove display: inline-block here, it will be added by JS for the typing effect to work with width calculation */
 }
 
- 
-.typing {
-  border-right: 3px solid var(--secondary-color);
+/* This class will be added by JavaScript to lines currently being typed */
+.typing-cursor {
+  border-right: 3px solid var(--secondary-color); /* The blinking cursor */
   animation: blink 0.7s step-end infinite;
-  padding-right: 3px;
 }
 
 @keyframes blink {
   50% {
     border-color: transparent;
   }
-} */
+}
 
+ 
