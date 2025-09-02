@@ -8,6 +8,7 @@
 }
 
 /* ===== HERO SECTION ===== */
+/* ===== HERO SECTION ===== */
 .hero-container {
   width: 100%;
   min-height: 100vh;
@@ -29,6 +30,9 @@
   flex: 1;
   color: var(--accent-color);
   z-index: 2;
+  /* Allow text to wrap naturally within its container */
+  white-space: normal; /* Override nowrap */
+  word-wrap: break-word; /* Ensure long words break */
 }
 
 .hero-text p:first-of-type {
@@ -119,6 +123,7 @@
 
 .fixed-social-icons i {
   color: var(--accent-color-dark);
+  
   font-size: 24px;
   transition: 0.3s ease;
 }
@@ -228,15 +233,12 @@
   }
 }
 
-
-/* Hero Text Animation */
-/* Hero Text Animation */
+/* Hero Text Animation - adjusted */
 .hero-text p,
 .hero-text h1,
 .hero-text h2 {
-  white-space: nowrap; /* Keep text on a single line */
-  overflow: hidden; /* Hide overflowing text */
-  /* Remove display: inline-block here, it will be added by JS for the typing effect to work with width calculation */
+  /* Remove white-space: nowrap; and overflow: hidden; from here */
+  /* The JavaScript will handle showing the text character by character */
 }
 
 /* This class will be added by JavaScript to lines currently being typed */
@@ -249,6 +251,11 @@
   50% {
     border-color: transparent;
   }
+}
+
+
+.fixed-social-icons{
+  display: flex !important;
 }
 
  

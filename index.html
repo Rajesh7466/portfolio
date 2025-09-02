@@ -14,6 +14,8 @@
     <!-- Bootstrap Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/20+13G6+v9L2G/j2P/b8P34L+f5S/W2gA3D+L" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <!-- Font Awesome (use CSS CDN) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pap6cXjQ0q6w5F2t3wS1l0p1yq6kFvQ1KxI1R7x2q1s3u2e6N6p3t4D9y1v5j1Q9s7Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -38,7 +40,7 @@
     <div class="scroll-tracker"></div>
     <div class="container">
       <!-- header start -->
-       <header>
+ <header>
   <nav class="navbar navbar-expand-lg fixed-top" style="backdrop-filter: blur(8px); background-color: var(--primary-color-light); border-bottom: 1px solid #000;">
     <div class="container-fluid">
       <!-- Logo -->
@@ -108,11 +110,11 @@
     <p id="line1" class="typing">Hi, my name is</p>
     <h1 id="line2" class="typing">Rajesh Kumar.</h1>
     <h2 id="line3" class="typing">I build things for the <em>web</em>.</h2>
-    <!-- <p id="line4" class="typing">
+    <p id="line4" class="typing">
       I’m a software engineer specializing in building <br> (and occasionally
       designing) exceptional digital experiences.
-    </p> -->
-    <a href="#projects" class="btn">View Projects</a>
+    </p>
+    <!-- <a href="#projects" class="btn">View Projects</a> -->
 
     <!-- Mobile Social Icons -->
     <div class="fixed-social-icons-mobile">
@@ -543,23 +545,25 @@
     { id: "line4", text: "I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences." }
   ];
 
-  let lineIndex = 0; // To keep track of which line is currently being typed
+  let lineIndex = 0;
 
   function typeWriter(element, text, delay, callback) {
-    element.textContent = ""; // Clear existing text
-    element.classList.add("typing-cursor"); // Add blinking cursor to the current line
-    element.style.display = "inline-block"; // Ensure it takes up space for the cursor
+    element.textContent = "";
+    element.classList.add("typing-cursor");
 
     let i = 0;
     function typing() {
       if (i < text.length) {
-        element.textContent += text.charAt(i);
-        i++;
+        if (text.substring(i, i + 4) === "<br>") {
+          element.innerHTML += "<br>";
+          i += 4;
+        } else {
+          element.textContent += text.charAt(i);
+          i++;
+        }
         setTimeout(typing, delay);
       } else {
-        // After typing is complete for this line
-        element.classList.remove("typing-cursor"); // Remove cursor from this line
-        element.style.display = ""; // Reset display after typing
+        element.classList.remove("typing-cursor");
         if (callback) callback();
       }
     }
@@ -570,22 +574,20 @@
     if (lineIndex < lines.length) {
       const currentLineData = lines[lineIndex];
       const el = document.getElementById(currentLineData.id);
+      const textToType = currentLineData.text.replace(/<br>/g, '<br>');
 
-      typeWriter(el, currentLineData.text, 70, () => {
-        // This callback runs after the current line has finished typing
-        lineIndex++; // Move to the next line
-        startTypingSequence(); // Start typing the next line
+      typeWriter(el, textToType, 70, () => {
+        lineIndex++;
+        startTypingSequence();
       });
     } else {
-      // All lines have been typed. Add the cursor to the end of the last line.
-      const lastEl = document.getElementById(lines[lines.length - 1].id);
-      lastEl.classList.add("typing-cursor");
-      lastEl.style.display = "inline-block"; // Ensure cursor is visible
+      // Remove this block entirely if you don't want the cursor to appear at the end.
+      // const lastEl = document.getElementById(lines[lines.length - 1].id);
+      // lastEl.classList.add("typing-cursor");
     }
   }
 
   window.onload = () => {
-    // Clear initial text to ensure animation starts clean
     lines.forEach(line => {
       const el = document.getElementById(line.id);
       if (el) el.textContent = "";
