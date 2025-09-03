@@ -112,7 +112,7 @@
 }
 
 /* FIXED SOCIAL ICONS */
-.fixed-social-icons {
+/* .fixed-social-icons {
   position: fixed;
   bottom: 200px;
   left: 60px;
@@ -139,7 +139,7 @@
   margin-left: 12px;
 }
 
-/* FIXED EMAIL */
+
 .fixed-email {
   position: fixed;
   bottom: 240px;
@@ -159,7 +159,7 @@
   transform: rotate(90deg) translateX(-10px);
 }
 
-/* MOBILE SOCIAL ICONS */
+ 
 .fixed-social-icons-mobile {
   display: none;
   margin-top: 20px;
@@ -173,7 +173,7 @@
 
 .fixed-social-icons-mobile a:hover {
   color: var(--secondary-color);
-}
+} */
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 992px) {
@@ -256,6 +256,57 @@
 
 .fixed-social-icons{
   display: flex !important;
+}
+
+
+/* === Desktop Social Icons === */
+/* FIXED SOCIAL ICONS - Updated for Desktop */
+/* ===== Fixed social icons (desktop + mobile) ===== */
+.fixed-social-icons{
+  position: fixed;
+  /* left & bottom scale with screen so it sits “inside” nicely on phones */
+  left: clamp(10px, 3vw, 60px);
+  bottom: clamp(56px, 18vh, 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* centers icons + line */
+  gap: clamp(12px, 2.2vh, 22px);
+  z-index: 1000;
+}
+
+.fixed-social-icons a{
+  color: var(--accent-color-dark);
+  font-size: clamp(18px, 2.6vh, 24px);
+  transition: 0.3s ease;
+}
+
+.fixed-social-icons a:hover{
+  color: var(--secondary-color);
+  transform: translateY(-4px);
+}
+
+/* the vertical line UNDER the icons */
+.fixed-social-icons span{
+  display: block;
+  width: 2px;  /* thickness of the line */
+  height: clamp(90px, 20vh, 160px); /* length scales with screen */
+  background-color: var(--accent-color-dark);
+  opacity: 0.8;
+}
+
+/* ===== Fixed email (hide on very small screens so it doesn't clutter) ===== */
+@media (max-width: 768px){
+  .fixed-email{ display:none; }
+}
+
+/* ===== If you added a mobile-inline icon row before, force it off to avoid duplicates ===== */
+.fixed-social-icons-mobile{
+  display: none !important;
+}
+
+/* OPTIONAL: keep content from being covered by the fixed column on tiny screens */
+@media (max-width: 576px){
+  body{ padding-left: 0; padding-bottom: 90px; } /* bottom room in case the line sits low */
 }
 
  
