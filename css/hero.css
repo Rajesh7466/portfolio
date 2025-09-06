@@ -266,7 +266,7 @@
   position: fixed;
   /* left & bottom scale with screen so it sits “inside” nicely on phones */
   left: clamp(10px, 3vw, 60px);
-  bottom: clamp(56px, 18vh, 200px);
+  bottom: clamp(56px, 18vh, 200px) !important;
   display: flex;
   flex-direction: column;
   align-items: center;      /* centers icons + line */
@@ -306,7 +306,10 @@
 
 /* OPTIONAL: keep content from being covered by the fixed column on tiny screens */
 @media (max-width: 576px){
-  body{ padding-left: 0; padding-bottom: 90px; } /* bottom room in case the line sits low */
+  body{ 
+    padding-left: 10px; 
+    padding-bottom: 90px; 
+  } /* bottom room in case the line sits low */
 }
 
  

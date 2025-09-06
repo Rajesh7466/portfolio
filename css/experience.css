@@ -1,121 +1,151 @@
 :root {
-  --primary-color: #0a192f;
-  --primary-color-light: #0a192f8d;
-  --secondary-color: #62ebcf;
-  --secondary-color-dark: #15d1ab;
-  --accent-color: #ccd6f6;
-  --accent-color-dark: #8892b0;
+  --primary-color: #0a192f;            /* Dark navy background */
+  --secondary-color: #62ebcf;          /* Bright teal */
+  --secondary-color-dark: #15D1AB;     /* Darker teal */
+  --accent-color: #ccd6f6;             /* Light bluish text */
+  --accent-color-dark: #8892b0;        /* Muted gray-blue */
 }
 
+/* ==============================
+   Timeline Container
+============================== */
 .experience-container {
+  position: relative;
   width: 100%;
-  padding: 80px 50px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
 }
 
-.experience-container h3 {
+/* Vertical line */
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--secondary-color), var(--secondary-color-dark));
+  border-radius: 3px;
+}
+
+/* ==============================
+   Timeline Item
+============================== */
+.timeline-item {
+  position: relative;
+  margin: 40px 0;
+  padding-left: 60px;
+}
+
+/* Circle (dot) */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, var(--secondary-color) 40%, var(--secondary-color-dark) 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(98, 235, 207, 0.6);
+}
+
+/* ==============================
+   Timeline Card (Glassmorphism)
+============================== */
+.timeline-content {
+  background: rgba(255, 255, 255, 0.05); /* glass effect */
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(21, 209, 171, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(98, 235, 207, 0.6);
+}
+
+/* ==============================
+   Text Styling
+============================== */
+.timeline-content h4 {
+  /* color: var(--secondary-color); */
+  color: #38bdf8;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.timeline-content h6 {
   color: var(--accent-color);
-  font-size: 30px;
-  letter-spacing: 1px;
-  margin-bottom: 50px;
-  text-align: center;
+  margin: 8px 0;
+  font-size: 16px;
 }
 
-.experience-container article {
-  margin-bottom: 80px;
+.timeline-content span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent-color-dark);
+  font-size: 14px;
 }
 
-.experience-container article img {
-  max-width: 100%;
-  height: auto;
-  outline: 3px solid var(--secondary-color-dark);
-  outline-offset: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+.timeline-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--accent-color-dark);
 }
 
-.experience-container article img:hover {
+/* ==============================
+   Skills / Tags
+============================== */
+.timeline-content .skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.timeline-content .skills span {
+  background: var(--secondary-color-dark);
+  color: var(--primary-color);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.timeline-content .skills span:hover {
+  background: var(--secondary-color);
   transform: scale(1.05);
 }
 
-.experience-container aside em {
-  color: var(--secondary-color-dark);
-  font-size: 18px;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.experience-container aside h5 {
-  color: var(--accent-color);
-  font-size: 24px;
-  margin: 10px 0;
-}
-
-.experience-container aside p {
-  color: var(--accent-color-dark);
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  max-width: 500px;
-}
-
-.experience-container figure {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.experience-container figure i {
-  background: var(--secondary-color-dark);
-  color: var(--primary-color);
-  font-size: 14px;
-  padding: 6px 12px;
-  border-radius: 20px;
-}
-
-.experience-container section a {
-  color: var(--secondary-color);
-  font-size: 28px;
-  transition: color 0.3s ease;
-}
-
-.experience-container section a:hover {
-  color: var(--accent-color);
-}
-
-/* ---------- Responsive Design ---------- */
-@media (max-width: 992px) {
-  .experience-container {
-    padding: 40px 15px;
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 12px;
   }
 
-  .experience-container article {
-    margin-bottom: 50px;
+  .timeline-item {
+    padding-left: 50px;
   }
 
-  .experience-container article img {
-    outline-offset: 10px;
-    border-radius: 8px;
+  .timeline-item::before {
+    left: 2px;
   }
 
-  .experience-container aside {
-    text-align: center !important;
-    padding: 15px;
-  }
-
-  .experience-container aside p {
-    max-width: 100%;
-    font-size: 16px;
-    padding: 0 10px;
-  }
-
-  .experience-container figure {
-    justify-content: center;
-  }
-}
-
-@media (min-width: 992px) {
-  aside {
-    padding-left: 50px !important;
+  .timeline-content {
+    font-size: 14px;
   }
 }
