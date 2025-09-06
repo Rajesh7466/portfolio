@@ -23,6 +23,8 @@
   integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -301,15 +303,15 @@
       <!-- Tool Card 1 -->
       <div class="col-6 col-md-4 col-lg-3">
         <div class="tool-card text-center">
-          <img src="assets/img/html.png" alt="Docker" class="img-fluid mb-3">
-          <h5>HTML</h5>
+          <img src="assets/img/java.png" alt="Docker" class="img-fluid mb-3">
+          <h5>JAVA</h5>
         </div>
       </div>
       <!-- Tool Card 2 -->
       <div class="col-6 col-md-4 col-lg-3">
         <div class="tool-card text-center">
-          <img src="assets/img/css.png" alt="AWS" class="img-fluid mb-3">
-          <h5>CSS</h5>
+          <img src="assets/img/sql-server.png" alt="AWS" class="img-fluid mb-3">
+          <h5>SQL</h5>
         </div>
       </div>
       <!-- Tool Card 3 -->
@@ -322,22 +324,22 @@
        <!-- Tool Card 4 -->
       <div class="col-6 col-md-4 col-lg-3">
         <div class="tool-card text-center">
-          <img src="assets/img/git.png" alt="Git" class="img-fluid mb-3">
-          <h5>GITHUB</h5>
+          <img src="assets/img/spring.png" alt="Git" class="img-fluid mb-3">
+          <h5>SPRINGBOOT</h5>
         </div>
       </div>
       <!-- Tool Card 5 -->
       <div class="col-6 col-md-4 col-lg-3">
         <div class="tool-card text-center">
-          <img src="assets/img/java.png" alt="Git" class="img-fluid mb-3">
-          <h5>JAVA</h5>
+          <img src="assets/img/html.png" alt="Git" class="img-fluid mb-3">
+          <h5>HTML</h5>
         </div>
       </div>
       <!-- Tool Card 6 -->
       <div class="col-6 col-md-4 col-lg-3">
         <div class="tool-card text-center">
-          <img src="assets/img/oracle.png" alt="Git" class="img-fluid mb-3">
-          <h5>DATABASE</h5>
+          <img src="assets/img/css.png" alt="Git" class="img-fluid mb-3">
+          <h5>CSS</h5>
         </div>
       </div>
       <!-- Tool Card 7 -->
@@ -357,15 +359,15 @@
        <!-- Tool Card 9 -->
       <div class="col-6 col-md-4 col-lg-3">
         <div class="tool-card text-center">
-          <img src="assets/img/spring.png" alt="Git" class="img-fluid mb-3">
-          <h5>SPRIGBOOT</h5>
+          <img src="assets/img/oracle.png" alt="Git" class="img-fluid mb-3">
+          <h5>DATABASE</h5>
         </div>
       </div>
        <!-- Tool Card 10 -->
       <div class="col-6 col-md-4 col-lg-3">
         <div class="tool-card text-center">
-          <img src="assets/img/sql-server.png" alt="Git" class="img-fluid mb-3">
-          <h5>SQL</h5>
+          <img src="assets/img/git.png" alt="Git" class="img-fluid mb-3">
+          <h5>GITHUB</h5>
         </div>
       </div>
       <!-- Add more cards as needed -->
@@ -404,7 +406,7 @@
         <i>Spring Boot</i>
       </figure>
       <section>
-        <a href="#"><i class="bi bi-link-45deg"></i></a>
+        <a href="https://demo.tariniedifice.com/iceream/"><i class="bi bi-link-45deg"></i></a>
       </section>
     </aside>
   </article>
@@ -435,7 +437,7 @@
         <i>REST API</i>
       </figure>
       <section>
-        <a href="#"><i class="bi bi-link-45deg"></i></a>
+        <a href="javascript:void(0)"><i class="bi bi-link-45deg"></i></a>
       </section>
     </aside>
   </article>
@@ -501,7 +503,7 @@
       <div class="col-lg-6 mt-40">
         <div class="contact-form p-4 rounded-3">
           <h4 class="fw-bold text-light mb-3">Send a Message</h4>
-          <form>
+          <form action="javascript:void(0)">
             <div class="row g-3">
               <div class="col-md-6">
                 <input type="text" class="form-control" placeholder="Your Name">
@@ -637,10 +639,20 @@
   };
 </script>
      <!-- my script end -->
-      <!-- header script start -->
-  
+      <!-- logic  script start -->
+       <script>
+  document.addEventListener("contextmenu", e => e.preventDefault());
+  document.addEventListener("selectstart", e => e.preventDefault());
 
-       <!-- header script end -->
+  // Disable some keys
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123 || (e.ctrlKey && e.keyCode == 85) || (e.ctrlKey && e.keyCode == 67)) {
+      return false;
+    }
+  }
+</script>
+
+       <!-- logic script end -->
   </body>
 
  

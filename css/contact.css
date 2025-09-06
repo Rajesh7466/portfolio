@@ -39,7 +39,7 @@
 .contact-form .form-control {
   background: rgba(255, 255, 255, 0.08);
   border: none;
-  color: #fff;
+  color: #fff !important;
 }
 
 .contact-form .form-control::placeholder {
